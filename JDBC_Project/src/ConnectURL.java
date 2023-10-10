@@ -1,4 +1,4 @@
-package JDBC_Project;
+package JDBC_Project.src;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +10,10 @@ public class ConnectURL {
     public static void main(String[] args) {
 
         // Create a variable for the connection string
-        String connectionUrl = "jdbc:sqlserver://<server>:<port>;databaseName=AdventureWorks;user=<user>;password=<password>";
+        String connectionUrl = "jdbc:sqlserver://localhost:13002;databaseName=AdventureWorks;user=sa;password=PH@123456789";
 
         try (Connection con = DriverManager.getConnection(connectionUrl); Statement stmt = con.createStatement();) {
+
             String SQL = "SELECT TOP 10 * FROM Person.Contact";
             ResultSet rs = stmt.executeQuery(SQL);
 
